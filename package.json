@@ -1,0 +1,16 @@
+{
+  "name": "wasdk-capstone-x86",
+  "version": "1.0.0",
+  "description": "Capstone disassembler framework for JavaScript (for x86 achitecture).",
+  "main": "lib/capstone-x88.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yury Delendik",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-exec": "^1.0.1"
+  }
+}

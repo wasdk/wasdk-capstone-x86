@@ -1,0 +1,3 @@
+[submodule "capstone.js"]
+	path = capstone.js
+	url = https://github.com/AlexAltea/capstone.js
