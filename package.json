@@ -3,6 +3,7 @@
   "version": "1.0.4",
   "description": "Capstone disassembler framework for JavaScript (for x86 achitecture).",
   "main": "lib/capstone-x86.min.js",
+  "types": "./capstone-x86.min.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
