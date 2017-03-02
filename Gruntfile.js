@@ -40,6 +40,10 @@ module.exports = function (grunt) {
     grunt.file.mkdir('lib');
     grunt.file.copy(path.join(capstoneJsDir, 'dist', 'capstone-x86.min.js'), 'lib/capstone-x86.min.js');
     grunt.file.copy(path.join(capstoneDir, 'LICENSE.txt'), './LICENSE.capstone');
+    // Patch to add UMD
+    var umd = grunt.file.read('exports_suffix.js', {encoding: null});
+    var buf = grunt.file.read('lib/capstone-x86.min.js', {encoding: null});
+    grunt.file.write('lib/capstone-x86.min.js', Buffer.concat([buf, umd]));
   });
 
   grunt.registerTask('build', ['check', 'exec:init_capstone_js', 'exec:run_subgrunt']);
