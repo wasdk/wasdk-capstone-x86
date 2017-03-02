@@ -38,8 +38,12 @@ module.exports = function (grunt) {
 
   grunt.registerTask('install', function () {
     grunt.file.mkdir('lib');
-    grunt.file.copy(path.join(capstoneJsDir, 'dist', 'capstone-x86.min.js'), 'lib/capstone-x86.min.js');
-    grunt.file.copy(path.join(capstoneDir, 'LICENSE.txt'), './LICENSE.capstone');
+    var lib = grunt.file.read(path.join(capstoneJsDir, 'dist', 'capstone-x86.min.js'), {encoding: null});
+    var license = grunt.file.read(path.join(capstoneDir, 'LICENSE.txt'));
+    var licenseAsComment = '/*\n * ' + license.split('\n').join('\n * ') + '\n */\n';
+    var captoneJsComment = '// Generated for x86 arch using https://github.com/AlexAltea/capstone.js\n';
+    var header = new Buffer(licenseAsComment + captoneJsComment);
+    grunt.file.write('lib/capstone-x86.min.js', Buffer.concat([header, lib])); 
   });
 
   grunt.registerTask('build', ['check', 'exec:init_capstone_js', 'exec:run_subgrunt',  'install']);
