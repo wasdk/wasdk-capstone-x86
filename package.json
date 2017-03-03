@@ -1,6 +1,6 @@
 {
   "name": "wasdk-capstone-x86",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Capstone disassembler framework for JavaScript (for x86 achitecture).",
   "main": "lib/capstone-x86.min.js",
   "types": "./capstone-x86.min.d.ts",
@@ -9,6 +9,10 @@
   },
   "author": "Yury Delendik",
   "license": "BSD-3-Clause",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wasdk/wasdk-capstone-x86"
+  },
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-contrib-copy": "^1.0.0",
